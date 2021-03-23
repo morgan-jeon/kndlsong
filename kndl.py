@@ -28,9 +28,9 @@ def routine(id, pw, youtubeid, song, artist):
     commitSong(song,artist,youtubeid,requ)
 
 if __name__=="__main__":
-    comdict = [
-        {'id':'01097370653','pw':'k09280303','yt':'WNp_XLCOTBw'},
-        {'id':'01074311015','pw':'1015','yt':'xOSmS2VEjpQ'}
-        ]
-    for c in comdict:
-        routine(c['id'],c['pw'],c['yt'],'','')
+    with open('list','r') as f:
+        sond = f.readlines()
+        for ll in sond:
+            l = ll.split(',')
+            print(l)
+            routine(l[0],l[1],l[2],'','')
